@@ -32,11 +32,10 @@ function TicTacToe() {
         setWinner(board[a]);
       }
     }
-    console.log(playCount);
     if(playCount === 9) setWinner("E");
   }
 
-  useEffect(calculateWinner, [board]);
+  useEffect(calculateWinner, [board, playCount]);
   const resetGame = () => {
     setCurrentPlayer("O");
     setBoard(emptyBoard);
